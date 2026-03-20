@@ -1,0 +1,9 @@
+moviepy<2.0.0
+openai-whisper
+opencv-python
+openai
+torch
+torchvision
+torchaudio
+pip-system-certs
+python-dotenv
